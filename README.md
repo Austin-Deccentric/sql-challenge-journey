@@ -57,10 +57,10 @@ sql-challenge-journey/
 
 ## 📊 Progress Summary
 
-* **Total Challenges Solved:** 1
+* **Total Challenges Solved:** 2
 * **Easy:** 0
 * **Medium:** 0
-* **Hard:** 1
+* **Hard:** 2
 
 For detailed tracking, see: `progress/tracker.md`
 
