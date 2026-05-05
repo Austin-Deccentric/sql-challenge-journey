@@ -74,7 +74,7 @@ For detailed tracking, see: `progress/tracker.md`
 * Concept: Gaps and Islands (streak analysis)
 
 📂 Location:
-`challenges/stratascratch/medium/consecutive_days/`
+`challenges/stratascratch/hard/consecutive_days/`
 
 ---
 
