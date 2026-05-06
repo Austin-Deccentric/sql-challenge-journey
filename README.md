@@ -60,7 +60,7 @@ sql-challenge-journey/
 * **Total Challenges Solved:** 2
 * **Easy:** 0
 * **Medium:** 0
-* **Hard:** 2
+* **Hard:** 3
 
 For detailed tracking, see: `progress/tracker.md`
 
