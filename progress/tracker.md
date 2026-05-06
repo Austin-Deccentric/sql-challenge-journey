@@ -4,3 +4,4 @@
 |---|----------|----------|------------|--------|
 | 1 | StrataScratch | Consecutive Days | Hard | ✅ |
 | 2 | StrataScratch | Best Selling Item | Hard | ✅ |
+| 3 | StrataScratch | COuntry Rank Variance | Hard | ✅ |
