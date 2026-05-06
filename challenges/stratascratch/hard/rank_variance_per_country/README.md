@@ -4,6 +4,8 @@
 - **Difficulty:** Hard  
 - **Date Solved:** 2026-05-05  
 
+**Concepts:** Aggregation, Ranking, Window Functions, Time-Series Analysis  
+
 ---
 
 ## 📄 Problem Summary
@@ -11,29 +13,43 @@ Identify countries whose ranking based on total comments improved from December 
 
 ---
 
-## 💡 Approach
+## 💡 Initial Approach (LEAD-Based)
 - Join comments data with user country data  
 - Filter only relevant months (Dec 2019 and Jan 2020)  
 - Aggregate total comments per country per month  
 - Rank countries monthly using `DENSE_RANK()`  
 - Use `LEAD()` to compare ranks between months  
-- Select countries where rank improved  
+
+📄 File: `solution.sql`
 
 ---
 
-## 🧾 Solution Explanation
-The query first aggregates comment counts by country and month.  
-Then it ranks countries within each month based on total comments.  
+## 🏆 Optimized Approach (Recommended)
+- Use conditional aggregation to compute both months in one pass  
+- Rank directly on aggregated results  
+- Compare January vs December ranks  
 
-Using `LEAD()`, it compares each country’s December rank to its January rank.  
-If the January rank is smaller (better), the country is considered to have improved.
+📄 File: `solution_optimized.sql`
+
+### ✅ Why this is preferred:
+- More efficient (single aggregation pass)  
+- No dependency on row ordering  
+- Cleaner and production-ready  
+
+---
+
+## 🧾 Solution Evolution
+This problem demonstrates multiple valid SQL approaches:
+
+1. **Window-based comparison (`LEAD`)** → simple but less robust   
+2. **Conditional aggregation (final)** → most efficient and practical  
 
 ---
 
 ## 🔍 Key Learnings
-- Time-based comparisons using window functions  
-- Using `LEAD()` for forward comparison  
-- Ranking with `DENSE_RANK()`  
-- Importance of filtering early for performance  
+- Multiple strategies exist for time-based comparisons  
+- Tradeoffs between readability, robustness, and performance  
+- Conditional aggregation is a powerful optimization technique  
+- Writing production-ready SQL requires evaluating different approaches  
 
 ---
