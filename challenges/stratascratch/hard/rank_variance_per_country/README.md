@@ -1,7 +1,7 @@
 # 🧩 Rank Variance Per Country
 
 - **Platform:** StrataScratch  
-- **Difficulty:** Medium  
+- **Difficulty:** Hard  
 - **Date Solved:** 2026-05-05  
 
 ---
