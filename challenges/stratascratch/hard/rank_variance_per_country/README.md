@@ -2,7 +2,7 @@
 
 - **Platform:** StrataScratch  
 - **Difficulty:** Hard  
-- **Date Solved:** 2026-05-05  
+- **Date Solved:** 2026-05-06  
 
 **Concepts:** Aggregation, Ranking, Window Functions, Time-Series Analysis  
 
