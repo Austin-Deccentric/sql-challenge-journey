@@ -57,36 +57,23 @@ sql-challenge-journey/
 
 ## 📊 Progress Summary
 
-* **Total Challenges Solved:** 2
-* **Easy:** 0
-* **Medium:** 0
-* **Hard:** 3
+| Difficulty | Count |
+|------------|-------|
+| Medium     | 0     |
+| Hard       | 3    |
+| **Total**  | **3** |
 
-For detailed tracking, see: `progress/tracker.md`
-
----
-
-## 🧩 Featured Challenge
-
-### Consecutive Days (Medium)
-
-* Platform: StrataScratch
-* Concept: Gaps and Islands (streak analysis)
-
-📂 Location:
-`challenges/stratascratch/hard/consecutive_days/`
+For full detail: [`progress/tracker.md`](progress/tracker.md)
 
 ---
 
-## 🛠️ Skills & Concepts
+## 🛠️ Concepts Covered
 
-* SELECT, WHERE, ORDER BY
-* JOINs (INNER, LEFT, RIGHT)
-* GROUP BY & Aggregations
-* Subqueries
-* Window Functions
-* Common Table Expressions (CTEs)
-* Data Cleaning Techniques
+- Window functions (ROW_NUMBER, RANK, DENSE_RANK, LEAD/LAG)
+- Gaps & islands / streak detection
+- Conditional aggregation
+- Ranking & filtering with CTEs
+- Query optimization & multi-approach evaluation
 
 ---
 
