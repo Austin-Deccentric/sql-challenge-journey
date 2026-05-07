@@ -2,97 +2,62 @@
 
 ---
 
-## 📌 Gaps & Islands (Consecutive Data)
-
-* Use `ROW_NUMBER()`
-* Normalize sequence → group
+## 📌 Gaps & Islands
 
 ```sql
-record_date - INTERVAL '1 day' * ROW_NUMBER()
+record_date - INTERVAL '1 day' * ROW_NUMBER() OVER (PARTITION BY account_id user_id ORDER BY record_date)
 ```
-
-**Use:** streaks, consecutive activity
+**Use:** streaks, consecutive activity detection
 
 ---
 
 ## 📌 Ranking
 
-* `ROW_NUMBER()` → no ties
-* `RANK()` → gaps
-* `DENSE_RANK()` → no gaps
+- `ROW_NUMBER()` → unique, no ties
+- `RANK()` → ties allowed, gaps in sequence
+- `DENSE_RANK()` → ties allowed, no gaps
 
 ```sql
 DENSE_RANK() OVER (PARTITION BY col ORDER BY metric DESC)
 ```
-
-**Use:** top-N, leaderboards
+**Use:** top-N per group, leaderboards
 
 ---
 
-## 📌 Time Comparison
-
-**1. Window (quick)**
+## 📌 LEAD / LAG
 
 ```sql
-LEAD(value) OVER (PARTITION BY id ORDER BY date)
+LEAD(value, 1) OVER (PARTITION BY id ORDER BY date)
+LAG(value, 1)  OVER (PARTITION BY id ORDER BY date)
 ```
+**Use:** row-to-row comparisons, month-over-month, next/previous event
 
-**2. Pivot (clear)**
+---
 
-```sql
-MAX(CASE WHEN month = 'Dec' THEN value END)
-```
+## 📌 Time Comparison Strategies
 
-**3. Conditional Agg (best)**
+| Approach | Pattern | Best When |
+|----------|---------|-----------|
+| Window | `LEAD() / LAG()` | Sequential comparison |
+| Pivot | `MAX(CASE WHEN month = 'Dec' THEN value END)` | Readability matters |
+| Conditional Agg | `SUM(CASE WHEN condition THEN value END)` | Performance + multi-metric |
 
-```sql
-SUM(CASE WHEN condition THEN value END)
-```
-
-👉 Prefer:
-
-* Performance → Conditional
-* Clarity → Pivot
-* Sequence → Window
+👉 Default to **Conditional Aggregation** in production.
 
 ---
 
 ## 📌 Conditional Aggregation
 
 ```sql
-SUM(CASE WHEN condition THEN value END)
+SUM(CASE WHEN condition THEN value END) AS metric
 ```
-
-**Use:** multi-metrics, comparisons
-
----
-
-## 📌 Filtering (Performance)
-
-```sql
-WHERE date >= 'YYYY-MM-DD'
-```
-
-* Filter early
-* Reduce data scanned
-
----
-
-## 📌 Window Functions
-
-* `ROW_NUMBER()`
-* `RANK()` / `DENSE_RANK()`
-* `LEAD()` / `LAG()`
-
-**Use:** ranking, trends, comparisons
+**Use:** compute multiple metrics in one pass, pivot-style comparisons
 
 ---
 
 ## 📌 SQL Principles
 
-* Filter early
-* Keep queries readable (CTEs)
-* Handle edge cases
-* Optimize only when needed
-
----
+- Filter early — reduces data scanned (`WHERE` before `JOIN` where possible)
+- Use CTEs for readability over nested subqueries
+- Handle edge cases (NULLs, ties, empty groups)
+- Optimize only when needed; clarity first
