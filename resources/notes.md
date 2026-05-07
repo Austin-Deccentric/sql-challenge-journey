@@ -5,7 +5,7 @@
 ## 📌 Gaps & Islands
 
 ```sql
-record_date - INTERVAL '1 day' * ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY record_date)
+record_date - INTERVAL '1 day' * ROW_NUMBER() OVER (PARTITION BY account_id, user_id ORDER BY record_date)
 ```
 **Use:** streaks, consecutive activity detection
 
