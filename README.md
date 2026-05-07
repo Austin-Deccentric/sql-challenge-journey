@@ -1,25 +1,22 @@
 # 📊 SQL Challenge Journey
 
-This repository documents my progress as I solve SQL challenges from different coding platforms.
-The goal is to build strong data querying skills, improve problem-solving ability, and prepare for technical interviews.
+A structured repository documenting my SQL problem-solving progress across coding platforms.
+Built as a SQL playbook — tracking solutions, patterns, and optimization thinking.
 
 ---
 
 ## 🚀 Objectives
 
-* Strengthen core SQL fundamentals
-* Master advanced querying techniques
-* Improve speed and accuracy in solving problems
-* Build a consistent problem-solving habit
+- Master advanced SQL querying techniques
+- Build pattern recognition across problem types
+- Develop production-oriented query thinking
+- Prepare for technical data interviews
 
 ---
 
 ## 🧠 Platforms
 
-* StrataScratch
-* LeetCode
-* HackerRank
-* CodeSignal
+- [StrataScratch](https://www.stratascratch.com/)
 
 ---
 
@@ -33,25 +30,15 @@ sql-challenge-journey/
 │   └── <platform>/
 │       └── <difficulty>/
 │           └── <challenge_name>/
-│               ├── README.md      # Explanation & approach
-│               └── solution.sql   # SQL solution
+│               ├── README.md       # Approach, evolution & learnings
+│               └── solution.sql    # SQL solution(s)
 │
 ├── progress/
-│   └── tracker.md                 # Progress tracking
+│   └── tracker.md                  # Progress tracking
 │
 └── resources/
-    └── notes.md                  # SQL concepts & patterns
+    └── notes.md                    # SQL patterns & cheat sheet
 ```
-
----
-
-## 📌 How I Approach Each Problem
-
-1. Understand the problem requirements
-2. Break it into smaller logical steps
-3. Write and test the SQL query
-4. Optimize if necessary
-5. Document the approach and key learnings
 
 ---
 
@@ -59,9 +46,9 @@ sql-challenge-journey/
 
 | Difficulty | Count |
 |------------|-------|
-| Medium     | 0     |
-| Hard       | 3    |
-| **Total**  | **3** |
+| Medium     | 1     |
+| Hard       | 3     |
+| **Total**  | **4** |
 
 For full detail: [`progress/tracker.md`](progress/tracker.md)
 
@@ -77,30 +64,8 @@ For full detail: [`progress/tracker.md`](progress/tracker.md)
 
 ---
 
-## 🧠 Key Focus Areas
+## 📈 Learning Direction
 
-* Writing clean and readable SQL
-* Understanding query performance
-* Handling edge cases
-* Learning real-world data patterns
-
----
-
-## 📈 Ongoing Plan
-
-* Solve challenges consistently
-* Revisit difficult problems
-* Expand into advanced SQL topics
-* Apply SQL in real data analysis projects
-
----
-
-## 🤝 Contributions
-
-This is a personal learning repository. Suggestions, improvements, or alternative solutions are always welcome.
-
----
-
-## 📬 Contact
-
-Feel free to connect or reach out for collaboration.
+- Tag problems by SQL pattern
+- Expand into analytics projects and dashboards
+- Evolve repo into a full data portfolio
